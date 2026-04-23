@@ -34,8 +34,8 @@ El desarrollo de juegos de azar y estrategia requiere una gestión precisa de la
 ## 6. Instrucciones de Compilación y Ejecución
 Para probar el programa, siga estos pasos en su terminal:
 1.  Navegar a la carpeta del proyecto: `cd src/`
-2.  Compilar: `gcc main.c -o balatro`
-3.  Ejecutar: `./balatro`
+2.  Compilar: `gcc main.c -o game`
+3.  Ejecutar: `./game`
 
 ## 7. Próximos Pasos (Hito 2)
 * Implementar efectos de "Jokers" que modifiquen las estadísticas.
