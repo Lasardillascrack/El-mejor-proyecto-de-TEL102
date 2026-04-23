@@ -1,0 +1,5 @@
+# Ignorar ejecutables de C
+Jueguito_mega_pro
+*.o
+*.out
+*.exe
