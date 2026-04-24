@@ -1,4 +1,4 @@
-# Proyecto (TEL-102)
+# Ardillatro
 
 Este proyecto consiste en el desarrollo de un juego de cartas inspirado en la mecánica de "Balatro", implementado en lenguaje C. El juego utiliza lógica matemática para el cálculo de puntajes basados en manos de póker y multiplicadores dinámicos.
 
