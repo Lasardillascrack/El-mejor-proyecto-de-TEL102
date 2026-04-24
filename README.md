@@ -34,8 +34,8 @@ El desarrollo de juegos de azar y estrategia requiere una gestión precisa de la
 ## 6. Instrucciones de Compilación y Ejecución
 Para probar el programa, siga estos pasos en su terminal:
 1.  Navegar a la carpeta del proyecto: `cd src/`
-2.  Compilar: `gcc main.c -o Jueguito_mega_pro`
-3.  Ejecutar: `./Jueguito_mega_pro`
+2.  Compilar: `gcc main.c -o Ardillatro`
+3.  Ejecutar: `./Ardillatro`
 
 ## 7. Próximos Pasos (Hito 2)
 * Implementar efectos de "Jokers" que modifiquen las estadísticas.
