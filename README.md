@@ -10,7 +10,6 @@ Tradicionalmente, el desarrollo del pensamiento lógico-matemático en la educac
 * **Objetivos Específicos:**
     * Implementar un sistema de mazo y manos utilizando estructuras (`struct`) y punteros.
     * Diseñar algoritmos de barajado y reparto de cartas que aseguren aleatoriedad.
-    * Validar jugadas básicas (Par, Trío, Color) y asignarles un puntaje matemático.
 
 ## 3. Integrantes y Roles
 * **Ignacio Espindola** Desarrollador.
