@@ -16,7 +16,7 @@ Tradicionalmente, el desarrollo del pensamiento lógico-matemático en la educac
 * **Ignacio Espindola** Desarrollador.
 * **Antonia Flores** Desarrollador.
 * **Gabriel Urbina** Scrum Master.
-* **Trinidad .....** Product Owner.
+* **Trinidad Silva** Product Owner.
 
 ## 4. Funcionalidades Implementadas (Hito 1)
 * Estructura de datos para Cartas y Mazos.
