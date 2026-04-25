@@ -3,7 +3,7 @@
 Este proyecto consiste en el desarrollo de un juego de cartas inspirado en la mecánica de "Balatro", implementado en lenguaje C. El juego utiliza lógica matemática para el cálculo de puntajes basados en manos de póker y multiplicadores dinámicos.
 
 ## 1. Problemática
-El desarrollo de juegos de azar y estrategia requiere una gestión precisa de la probabilidad y la estructura de datos. El problema abordado es la creación de un motor que reconozca combinaciones de cartas (manos) y aplique reglas matemáticas de puntuación de forma eficiente en un entorno de consola, permitiendo al usuario tomar decisiones estratégicas de descarte y juego.
+Tradicionalmente, el desarrollo del pensamiento lógico-matemático en la educación técnica se ha visto limitado por métodos de enseñanza basados en la memorización de fórmulas y procedimientos mecánicos. Esta desconexión entre la teoría y la práctica impide que los estudiantes comprendan la estructura subyacente de los problemas, dificultando el análisis crítico y la toma de decisiones basada en datos.
 
 ## 2. Objetivos
 * **Objetivo General:** Desarrollar una versión funcional de un de juego de cartas en C que procese jugadas y calcule puntajes mediante una lógica de multiplicadores.
@@ -13,15 +13,15 @@ El desarrollo de juegos de azar y estrategia requiere una gestión precisa de la
     * Validar jugadas básicas (Par, Trío, Color) y asignarles un puntaje matemático.
 
 ## 3. Integrantes y Roles
-* **         ** Desarrollador.
-* **         ** Desarrollador.
-* **         ** Scrum Master.
-* **         ** Product Owner.
+* **Ignacio Espindola** Desarrollador.
+* **Antonia Flores** Desarrollador.
+* **Gabriel Urbina** Scrum Master.
+* **Trinidad .....** Product Owner.
 
 ## 4. Funcionalidades Implementadas (Hito 1)
 * Estructura de datos para Cartas y Mazos.
 * Función de inicialización y barajado de mazo de 52 cartas.
-* Reparto de mano inicial (8 cartas) y visualización en consola.
+* Reparto de mano inicial y visualización en consola.
 * Selección de cartas por el usuario para jugar o descartar.
 
 ## 5. Casos de Prueba
