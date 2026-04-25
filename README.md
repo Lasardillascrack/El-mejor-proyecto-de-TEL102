@@ -27,9 +27,7 @@ Tradicionalmente, el desarrollo del pensamiento lógico-matemático en la educac
 ## 5. Casos de Prueba
 | Entrada | Acción | Salida Esperada |
 | :--- | :--- | :--- |
-| `1` | Seleccionar carta 1 | La carta se marca como seleccionada para la mano actual. |
-| `Jugar` | Ejecutar jugada de un Par | El sistema identifica el "Par" y otorga puntaje base x 2. |
-| `Barajar` | Reiniciar mazo | El mazo se vuelve a generar en un orden aleatorio diferente. |
+| `Enter` | Robar una carta del mazo. | Se ejecuta `drawCard`. La carta en la posición `cardsDrawn` del mazo pasa a la mano. El contador de "Cartas en mano" aumenta (ej: de 1/5 a 2/5). |
 
 ## 6. Instrucciones de Compilación y Ejecución
 Para probar el programa, siga estos pasos en su terminal:
