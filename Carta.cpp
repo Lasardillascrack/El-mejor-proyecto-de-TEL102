@@ -1,22 +1,13 @@
-#ifndef CARTA_HPP
-#define CARTA_HPP
+#include "Carta.hpp"
+#include <iostream>
 
-#include <string>
+Carta::Carta(std::string _tipoPinta, std::string _textoValor, int _puntos)
+    : tipoPinta(_tipoPinta), textoValor(_textoValor), puntos(_puntos) {}
 
-class Carta {
-private:
-    std::string tipoPinta;    
-    std::string textoValor;   
-    int puntos;               
+std::string Carta::obtenerPinta() const { return tipoPinta; }
+std::string Carta::obtenerValor() const { return textoValor; }
+int Carta::obtenerPuntos() const { return puntos; }
 
-public:
-    Carta(std::string _tipoPinta, std::string _textoValor, int _puntos);
-    
-    std::string obtenerPinta() const;
-    std::string obtenerValor() const;
-    int obtenerPuntos() const;
-    
-    void mostrar() const;
-};
-
-#endif
+void Carta::mostrar() const {
+    std::cout << textoValor << " de " << tipoPinta;
+}
