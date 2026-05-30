@@ -11,11 +11,11 @@ private:
 
 public:
     Carta(std::string _tipoPinta, std::string _textoValor, int _puntos);
-    
+
     std::string obtenerPinta() const;
     std::string obtenerValor() const;
     int obtenerPuntos() const;
-    
+
     void mostrar() const;
 };
 
