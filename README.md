@@ -1,6 +1,6 @@
 # Ardillatro
 
-Este proyecto consiste en el desarrollo de un juego de cartas inspirado en la mecánica de "Balatro", implementado en lenguaje C. El juego utiliza lógica matemática para el cálculo de puntajes basados en manos de póker y multiplicadores dinámicos.
+Este proyecto consiste en el desarrollo de un juego de cartas inspirado en la mecánica de "Balatro", refactorizado íntegramente a **C++** utilizando el paradigma de **Programación Orientada a Objetos (POO)** para el Hito 2.
 
 ## 1. Problemática
 Tradicionalmente, el desarrollo del pensamiento lógico-matemático en la educación técnica se ha visto limitado por métodos de enseñanza basados en la memorización de fórmulas y procedimientos mecánicos. Esta desconexión entre la teoría y la práctica impide que los estudiantes comprendan la estructura subyacente de los problemas, dificultando el análisis crítico y la toma de decisiones basada en datos.
