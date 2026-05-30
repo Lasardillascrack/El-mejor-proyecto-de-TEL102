@@ -38,7 +38,18 @@ Para probar el programa, siga estos pasos en su terminal:
 2.  Compilar: `g++ main.cpp Jugador.cpp Mazo.cpp Carta.cpp -o Ardillatro`
 3.  Ejecutar: `./Ardillatro`
 
-## 7. Próximos Pasos (Hito 2)
-* Implementar efectos de "Jokers" que modifiquen las estadísticas.
-* Crear un sistema de "Tienda" para comprar mejoras entre rondas.
-* Refinar la interfaz de usuario para una mejor experiencia de juego.
+## 7. Cambios estructurales 
+* De arreglos fijos a vectores dinámicos.
+* De struct a clases
+* De variables globales a encapsulamiento.
+* Mapeo de datos.
+* Flujo de consola limpios.
+
+## 8. Clases creadas y sus relaciones 
+* Carta: Representa un naipe que contiene atributos privados (pinta, valor y puntos) y funciones públicas para consultar datos.
+* Mazo: Administra el conjunto de 52 cartas que contiene un vector privado de objeto tipo carta. Tiene la función de barajar y entregar cartas de una en una.
+* Jugador: Administra la mano actual y el estado del juego. Contiene un vector privado que almacena un máximo de 8 cartas.
+* Se utiliza una relación de composición, el mazo se compone de objetos Carta y el Jugador se compone de un conjunto dinámico de cartas en su mano. El archivo main.ccp coordina y comunica al mazo con el jugador.
+
+## 9. Próximos Pasos (Hito 3)
+* 
