@@ -1,4 +1,5 @@
-# Ignorar ejecutables de C
+# Ignorar ejecutables de C++
+Ardillatro
 ardillatro
 *.o
 *.out
