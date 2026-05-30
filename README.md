@@ -62,5 +62,10 @@ Para probar el programa, siga estos pasos en su terminal:
 * Jugador: Administra la mano actual y el estado del juego. Contiene un vector privado que almacena un máximo de 8 cartas.
 * Se utiliza una relación de composición, el mazo se compone de objetos Carta y el Jugador se compone de un conjunto dinámico de cartas en su mano. El archivo main.ccp coordina y comunica al mazo con el jugador.
 
-## 9. Próximos Pasos (Hito 3)
+## 9. Dificultades
+* ​La mayor dificultad algorítmica apareció al programar la eliminación consecutiva de cartas en un mismo turno dentro de un vector dinámico.
+Si el usuario seleccionaba borrar las cartas de los índices 1 y 3, y el código borraba primero el índice 1, todas las cartas restantes de la mano se movían de inmediato una posición hacia la izquierda. Esto provocaba que la carta que originalmente estaba en el índice 3 pasara al índice 2, por lo que al ejecutar el segundo borrado eliminábamos una carta equivocada.
+​Solución: Modificamos la función en la clase Jugador para guardar los índices seleccionados en un vector temporal. Aplicamos el comando std::sort junto con std::greater para ordenar esos números obligatoriamente de mayor a menor. Al borrar las cartas empezando desde el índice más alto hacia el más bajo, las posiciones de las cartas de la izquierda no sufren alteraciones, resolviendo el problema por completo.
+
+## 10. Próximos Pasos (Hito 3)
 * 
