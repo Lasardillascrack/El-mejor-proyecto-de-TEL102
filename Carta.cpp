@@ -8,6 +8,4 @@ std::string Carta::obtenerPinta() const { return tipoPinta; }
 std::string Carta::obtenerValor() const { return textoValor; }
 int Carta::obtenerPuntos() const { return puntos; }
 
-void Carta::mostrar() const {
-    std::cout << textoValor << " de " << tipoPinta;
-}
+void Carta::mostrar() const { std::cout << textoValor << " de " << tipoPinta; }
