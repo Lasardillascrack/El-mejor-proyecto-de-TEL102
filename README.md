@@ -27,7 +27,7 @@ Tradicionalmente, el desarrollo del pensamiento lógico-matemático en la educac
 * Límite de 3 intentos para lograr un objetivo
 * Un total de 5 niveles para superar puntajes y mejorar habilidades.
 
-  ## 5. Cambios estructurales 
+## 5. Cambios estructurales 
 * De arreglos fijos a vectores dinámicos.
 * De struct a clases
 * De variables globales a encapsulamiento.
@@ -68,5 +68,9 @@ Si el usuario seleccionaba borrar las cartas de los índices 1 y 3, y el código
 ​Solución: Modificamos la función en la clase Jugador para guardar los índices seleccionados en un vector temporal. Aplicamos el comando std::sort junto con std::greater para ordenar esos números obligatoriamente de mayor a menor. Al borrar las cartas empezando desde el índice más alto hacia el más bajo, las posiciones de las cartas de la izquierda no sufren alteraciones, resolviendo el problema por completo.
 
 ## 10. Próximos Pasos (Hito 3)
-* 
+* Implementar efectos de "Comodines" (Jokers) aplicando los pilares de Herencia y Polimorfismo.
+* Crear un sistema de economía y "Tienda" persistente para comprar mejoras entre niveles.
+  
 ## 11. Anexos y Referencias
+* El Lenguaje de Programación C++ - Bjarne Stroustrup.
+* Material Académico: Presentaciones y apuntes de la Clase 5 sobre Pilares de la Programación Orientada a Objetos y constructores en C++.
