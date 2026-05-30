@@ -17,11 +17,14 @@ Tradicionalmente, el desarrollo del pensamiento lógico-matemático en la educac
 * **Gabriel Urbina** Scrum Master.
 * **Trinidad Silva** Product Owner.
 
-## 4. Funcionalidades Implementadas (Hito 1)
-* Estructura de datos para Cartas y Mazos.
-* Función de inicialización y barajado de mazo de 52 cartas.
-* Reparto de mano inicial y visualización en consola.
-* Selección de cartas por el usuario para jugar o descartar.
+## 4. Funcionalidades Implementadas (Hito 2)
+* Estructura de datos en clases independientes.
+* Uso de librería estandar para manejar una memoria de forma automática y revisar que no haya cartas repetidas. 
+* Reparto de mano inicial de 8 cartas.
+* Selección libre de hasta 5 cartas de la mano para ser jugadas o descartadas.
+* Sistema de cálculo del puntaje que permite mantener la mayor puntuación.
+* Límite de 3 intentos para lograr un objetivo
+* Un total de 5 niveles para superar puntajes y mejorar habilidades.
 
 ## 5. Casos de Prueba
 | Entrada | Acción | Salida Esperada |
