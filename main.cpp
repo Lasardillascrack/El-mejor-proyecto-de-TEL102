@@ -7,82 +7,169 @@
 
 int main() {
     try {
-        // Inicialización del motor base
+        int maxNiveles = 5;
+
+        // Calculados para ser ganables con 4 manos si se juega estratégicamente.
+        int puntajesObjetivo[5] = {300, 450, 600, 800, 1000}; 
+
         Mazo mazoJuego;
         mazoJuego.barajar();
 
-        Jugador jugadorPrincipal("Jugador 1");
+        Jugador jugadorPrincipal("jugador 1"); 
 
-        // Repartimos las 5 cartas iniciales exactas de la mano
-        for (int i = 0; i < 5; ++i) {
+        // Repartimos las 8 cartas iniciales exactas de la mano
+        for (int i = 0; i < 8; ++i) {
             jugadorPrincipal.recibirCarta(mazoJuego.robar());
         }
-        
+
         char opcionMenu = ' ';
 
-        while (opcionMenu != 'q' && opcionMenu != 'Q') {
-            // Cabecera exacta solicitada en el Hito 2
-            std::cout << "==================================================\n";
-            std::cout << "               ARDILLATRO - HITO 2                \n";
-            std::cout << "==================================================\n";
-            
-            // Cálculos dinámicos mostrados idénticos a la foto
-            int fichasBase = jugadorPrincipal.calcularPuntajeFichas();
-            int multiplicador = jugadorPrincipal.calcularMultiplicador();
-            int puntajeManoTotal = fichasBase * multiplicador;
+        for (int nivelActual = 1; nivelActual <= maxNiveles; ++nivelActual) {
 
-            std::cout << "Puntaje de la Mano: " << puntajeManoTotal 
-                      << " (" << fichasBase << " x " << multiplicador << ")\n";
-            std::cout << "Jugada Detectada: " << jugadorPrincipal.detectarJugada() << "\n";
-            std::cout << "--------------------------------------------------\n";
-            
-            // Despliegue de la lista indexada
-            jugadorPrincipal.mostrarMano();
-            std::cout << "==================================================\n\n";
+            int objetivoNivel = puntajesObjetivo[nivelActual - 1];
+            int puntajeAcumuladoNivel = 0;
+            int manosRestantes = 4;     // Límite de jugadas estricto
+            int descartesRestantes = 3; // Límite de descartes estricto
 
-            // Línea de opciones idéntica a la pantalla
-            std::cout << "[M opciones]: (j) Jugar mano actual | (d) Descartar cartas | (q) Salir: ";
-            std::cin >> opcionMenu;
+            bool nivelSuperado = false;
 
-            if (opcionMenu == 'd' || opcionMenu == 'D') {
-                int cantidadADescartar = 0;
-                std::cout << "¿Cuántas cartas deseas descartar? (1-5): ";
-                std::cin >> cantidadADescartar;
+            while (opcionMenu != 'q' && opcionMenu != 'Q') {
 
-                if (cantidadADescartar >= 1 && cantidadADescartar <= jugadorPrincipal.obtenerCantidadCartas()) {
-                    std::vector<int> indicesElegidos;
+                std::cout << "==================================================\n";
+                std::cout << "               ARDILLATRO - HITO 2                \n";
+                std::cout << "==================================================\n";
 
-                    // Captura exacta según el índice solicitado en la foto
-                    for (int k = 0; k < cantidadADescartar; ++k) {
+                std::cout << "NIVEL: " << nivelActual << " DE " << maxNiveles << "\n";
+                std::cout << "Objetivo: " << puntajeAcumuladoNivel << " / " << objetivoNivel << " puntos.\n";
+                std::cout << "Manos restantes: " << manosRestantes << " | Descartes restantes: " << descartesRestantes << "\n";
+                std::cout << "--------------------------------------------------\n";
+
+                jugadorPrincipal.mostrarMano();
+                std::cout << "==================================================\n\n";
+
+                std::cout << "[Opciones]: (j) Jugar mano | (d) Descartar | (q) Salir: ";
+                std::cin >> opcionMenu;
+
+                // opcion descartar
+                if (opcionMenu == 'd' || opcionMenu == 'D') {
+                    if (descartesRestantes <= 0) {
+                        std::cout << "\n[!] Ya no te quedan descartes en este nivel.\n\n";
+                        continue;
+                    }
+
+                    int cantidadADescartar = 0;
+                    std::cout << "¿Cuántas cartas deseas descartar? (1-5): ";
+                    std::cin >> cantidadADescartar;
+
+                    if (cantidadADescartar >= 1 && cantidadADescartar <= 5 && cantidadADescartar <= jugadorPrincipal.obtenerCantidadCartas()) {
+                        std::vector<int> indicesElegidos;
+
+                        for (int k = 0; k < cantidadADescartar; ++k) {
+                            int indiceActual = 0;
+                            std::cout << "Ingresa el índice de la carta " << (k + 1) << ": ";
+                            std::cin >> indiceActual;
+                            indicesElegidos.push_back(indiceActual);
+                        }
+
+                        std::sort(indicesElegidos.begin(), indicesElegidos.end(), std::greater<int>());
+
+                        for (int posicionIndice : indicesElegidos) {
+                            if (jugadorPrincipal.descartarPorIndice(posicionIndice) && !mazoJuego.estaVacio()) {
+                                jugadorPrincipal.recibirCarta(mazoJuego.robar());
+                            }
+                        }
+                        descartesRestantes--; // Restamos 1 al límite de descartes
+                        std::cout << "\n[!] Cartas reemplazadas con éxito.\n\n";
+                    } else {
+                        std::cout << "\n[!] Cantidad de cartas inválida.\n\n";
+                    }
+                }
+
+                // opcion jugar
+                else if (opcionMenu == 'j' || opcionMenu == 'J') {
+                    if (manosRestantes <= 0) {
+                         //por si algo falla, no debería entrar aquí por el chequeo de victoria/derrota
+                         continue;
+                    }
+
+                    int cantidadAJugar = 5;
+                    std::cout << "Seleccione 5 cartas a jugar (ingrese el índice):\n";
+
+                    std::vector<Carta> cartasJugadas; 
+                    std::vector<int> indicesAJugar;
+                    int fichasDeCartas = 0;           
+
+                    for (int k = 0; k < cantidadAJugar; ++k) {
                         int indiceActual = 0;
                         std::cout << "Ingresa el índice de la carta " << (k + 1) << ": ";
                         std::cin >> indiceActual;
-                        indicesElegidos.push_back(indiceActual);
+
+                        indicesAJugar.push_back(indiceActual);
+                        Carta cartaElegida = jugadorPrincipal.obtenerCartaEn(indiceActual);
+                        cartasJugadas.push_back(cartaElegida);
+                        fichasDeCartas += cartaElegida.obtenerPuntos();
                     }
 
-                    // Ordenamos los índices de mayor a menor para evitar desajustes al borrar
-                    std::sort(indicesElegidos.begin(), indicesElegidos.end(), std::greater<int>());
+                    PuntajeBalatro resultado = jugadorPrincipal.evaluarJugadaExacta(cartasJugadas);
 
-                    // Procedemos al descarte e inmediatamente rellenamos desde el mazo
-                    for (int posicionIndice : indicesElegidos) {
-                        if (jugadorPrincipal.descartarPorIndice(posicionIndice)) {
-                            // Al vaciar un espacio robamos una carta nueva automáticamente
+                    int totalFichasAzules = resultado.fichasBase + fichasDeCartas;
+                    int puntajeManoTotal = totalFichasAzules * resultado.multBase;
+
+                    std::cout << "\n================ RESULTADO =====================\n";
+                    std::cout << "Jugada Detectada: " << resultado.nombreMano << "\n";
+                    std::cout << "Puntos de las Cartas: +" << fichasDeCartas << " fichas\n";
+                    std::cout << "Matemática: " << totalFichasAzules << " Fichas x " << resultado.multBase << " Mult\n";
+                    std::cout << "PUNTAJE DE ESTA MANO: " << puntajeManoTotal << "\n";
+                    std::cout << "==================================================\n";
+
+                    puntajeAcumuladoNivel += puntajeManoTotal;
+                    manosRestantes--; // Restamos 1 al límite de manos
+
+                    std::sort(indicesAJugar.begin(), indicesAJugar.end(), std::greater<int>());
+                    for (int idx : indicesAJugar) {
+                        jugadorPrincipal.descartarPorIndice(idx);
+                    }
+
+                    int cartasFaltantes = 7 - jugadorPrincipal.obtenerCantidadCartas();
+                    for(int i = 0; i < cartasFaltantes; i++) {
+                        if(!mazoJuego.estaVacio()) {
                             jugadorPrincipal.recibirCarta(mazoJuego.robar());
                         }
                     }
-                    std::cout << "\n[!] Cartas reemplazadas con éxito.\n\n";
-                } else {
-                    std::cout << "\n[!] Cantidad de cartas inválida.\n\n";
+
+                    // Chequeo inmediato después de jugar
+                    if (puntajeAcumuladoNivel >= objetivoNivel) {
+                        nivelSuperado = true;
+                        break; 
+                    } else if (manosRestantes == 0) {
+                        break; 
+                    }
                 }
+            } 
+
+            if (opcionMenu == 'q' || opcionMenu == 'Q') {
+                break; 
             }
-            else if (opcionMenu == 'j' || opcionMenu == 'J') {
-                std::cout << "\n¡Has jugado tu mano con un puntaje final de: " << puntajeManoTotal << " pts!\n";
-                break;
+
+            // termino del nivel
+            if (nivelSuperado) {
+                std::cout << "\n>>> ¡NIVEL " << nivelActual << " COMPLETADO! <<<\n";
+                if (nivelActual == maxNiveles) {
+                    std::cout << "\n!!! FELICIDADES, HAS GANADO ARDILLATRO !!!\n";
+                } else {
+                    std::cout << "Presiona 'c' para continuar al Nivel " << (nivelActual + 1) << "... ";
+                    char pausa;
+                    std::cin >> pausa;
+                }
+            } else {
+                std::cout << "\n--- GAME OVER ---\n";
+                std::cout << "Te quedaste sin manos y no lograste el objetivo de " << objetivoNivel << " puntos.\n";
+                break; 
             }
-        }
+        } 
 
         std::cout << "\n--- Gracias por jugar a Ardillatro ---\n";
-
+        
     } catch (const std::exception& errorExcepcion) {
         std::cerr << "\n[!] Error en la ejecución: " << errorExcepcion.what() << std::endl;
         return 1;
