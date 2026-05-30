@@ -6,10 +6,11 @@ Este proyecto consiste en el desarrollo de un juego de cartas inspirado en la me
 Tradicionalmente, el desarrollo del pensamiento lógico-matemático en la educación técnica se ha visto limitado por métodos de enseñanza basados en la memorización de fórmulas y procedimientos mecánicos. Esta desconexión entre la teoría y la práctica impide que los estudiantes comprendan la estructura subyacente de los problemas, dificultando el análisis crítico y la toma de decisiones basada en datos.
 
 ## 2. Objetivos
-* **Objetivo General:** Desarrollar una versión funcional de un de juego de cartas en C que procese jugadas y calcule puntajes mediante una lógica de multiplicadores.
+* **Objetivo General:** Desarrollar una versión funcional y orientada a objetos de un juego de cartas interactivo en C++ que procese jugadas, calcule puntajes mediante una lógica combinatoria de multiplicadores y evalúe el progreso a través de niveles de dificultad escalares.
 * **Objetivos Específicos:**
-    * Implementar un sistema de mazo y manos utilizando estructuras (`struct`) y punteros.
-    * Diseñar algoritmos de barajado y reparto de cartas que aseguren aleatoriedad.
+    * Migrar la arquitectura de datos estructurada a un diseño POO para garantizar el encapsulamiento.
+    * Diseñar algoritmos combinatorios para detectar con precisión jerarquías matemáticas de póker.
+    * Implementar un sistema de control de recursos limitados (manos y descartes máximos por nivel).
 
 ## 3. Integrantes y Roles
 * **Ignacio Espindola** Desarrollador.
