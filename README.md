@@ -28,10 +28,21 @@ Tradicionalmente, el desarrollo del pensamiento lógico-matemático en la educac
 * Un total de 5 niveles para superar puntajes y mejorar habilidades.
 
 ## 5. Casos de Prueba
-| Entrada | Acción | Salida Esperada |
+| Acción | Entrada del Usuario | Resultado del Sistema |
 | :--- | :--- | :--- |
-| `Enter` | Robar una carta del mazo. | Se ejecuta `drawCard`. La carta en la posición `cardsDrawn` del mazo pasa a la mano. El contador de "Cartas en mano" aumenta (ej: de 1/5 a 2/5). |
+| Descarte | `d` -> `1` -> Enter | El sistema valida la entrada, invoca `descartarPorIndice()`, remueve la carta del `Jugador`, roba una del `Mazo` y reduce el contador de descartes. |
+| Jugar Mano | `j` -> índices (ej: 0,1,2,3,4) | Se invoca `evaluarJugadaExacta()`. El motor detecta la combinación matemática, multiplica fichas base e imprime el puntaje acumulado. |
 
+**Ejemplo de Salida en Terminal:**
+```
+================ RESULTADO =====================
+Jugada Detectada: Color
+Puntos de las Cartas: +45 fichas
+Matemática: 80 Fichas x 4 Mult
+PUNTAJE DE ESTA MANO: 320
+================================================
+>>> ¡NIVEL 1 COMPLETADO! <<<
+```
 ## 6. Instrucciones de Compilación y Ejecución
 Para probar el programa, siga estos pasos en su terminal:
 1.  Navegar a la carpeta del proyecto: `cd src/`
