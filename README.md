@@ -31,7 +31,7 @@ Tradicionalmente, el desarrollo del pensamiento lógico-matemático en la educac
 ## 6. Instrucciones de Compilación y Ejecución
 Para probar el programa, siga estos pasos en su terminal:
 1.  Navegar a la carpeta del proyecto: `cd src/`
-2.  Compilar: `gcc main.c -o Ardillatro`
+2.  Compilar: `g++ main.cpp Jugador.cpp Mazo.cpp Carta.cpp -o Ardillatro`
 3.  Ejecutar: `./Ardillatro`
 
 ## 7. Próximos Pasos (Hito 2)
