@@ -1,7 +1,7 @@
 # Ardillatro - Hito 3
 
 ## 1. Problemática y Objetivos
-**Problemática:**Tradicionalmente, el desarrollo del pensamiento lógico-matemático en la educación técnica se ha visto limitado por métodos de enseñanza basados en la memorización de fórmulas y procedimientos mecánicos. Esta desconexión entre la teoría y la práctica impide que los estudiantes comprendan la estructura subyacente de los problemas, dificultando el análisis crítico y la toma de decisiones basada en datos.
+**Problemática:** Tradicionalmente, el desarrollo del pensamiento lógico-matemático en la educación técnica se ha visto limitado por métodos de enseñanza basados en la memorización de fórmulas y procedimientos mecánicos. Esta desconexión entre la teoría y la práctica impide que los estudiantes comprendan la estructura subyacente de los problemas, dificultando el análisis crítico y la toma de decisiones basada en datos.
 
 
 **Objetivo General:** Implementar una versión funcional de Ardillatro con interfaz gráfica en C++ (Qt), logrando el desacoplamiento entre vista y dominio.
