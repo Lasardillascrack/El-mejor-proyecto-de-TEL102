@@ -31,8 +31,8 @@ Ejemplo de uso:
 3. Presionar "Jugar Mano".
 
 ## 6. Capturas de la Interfaz
-<img width="1200" height="819" alt="image" src="https://github.com/user-attachments/assets/dc22bca2-79fc-41aa-9674-f14110a24781" />
-<img width="1200" height="819" alt="image" src="https://github.com/user-attachments/assets/69fee47d-fb60-4b34-938e-2c47f21dbe3c" />
+<img width="1600" height="1092" alt="image" src="https://github.com/user-attachments/assets/dc22bca2-79fc-41aa-9674-f14110a24781" />
+<img width="1600" height="1092" alt="image" src="https://github.com/user-attachments/assets/69fee47d-fb60-4b34-938e-2c47f21dbe3c" />
 
 
 
