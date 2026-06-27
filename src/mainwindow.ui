@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>850</width>
+    <height>550</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Balatro Math Seminar - Engine v1.0</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #111827; color: #f9fafb; font-family: 'Segoe UI', Arial;</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayoutPrincipal">
+    <property name="spacing">
+     <number>15</number>
+    </property>
+    <property name="leftMargin">
+     <number>20</number>
+    </property>
+    <property name="topMargin">
+     <number>20</number>
+    </property>
+    <property name="rightMargin">
+     <number>20</number>
+    </property>
+    <property name="bottomMargin">
+     <number>20</number>
+    </property>
+    <item>
+     <layout class="QHBoxLayout" name="layoutPaneles">
+      <property name="spacing">
+       <number>20</number>
+      </property>
+      <item>
+       <layout class="QVBoxLayout" name="panelIzquierdo">
+        <property name="spacing">
+         <number>12</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="lblMarcadorGlobal">
+          <property name="styleSheet">
+           <string notr="true">font-size: 26px; font-weight: bold; color: #f43f5e;</string>
+          </property>
+          <property name="text">
+           <string>PUNTOS: 0 / 5000</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="lblEstadisticasMano">
+          <property name="minimumSize">
+           <size>
+            <width>250</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font-size: 15px; color: #38bdf8; background-color: #1f2937; padding: 12px; border-radius: 6px; border: 1px solid #374151;</string>
+          </property>
+          <property name="text">
+           <string>Fichas Base: 0 | Mult: x1 | Bonos: +0</string>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="lblManoYDescartes">
+          <property name="styleSheet">
+           <string notr="true">font-size: 15px; color: #a3e635; font-weight: 500;</string>
+          </property>
+          <property name="text">
+           <string>Manos Restantes: 4 | Descartes: 3</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnAyudaManos">
+          <property name="styleSheet">
+           <string notr="true">QPushButton { 
+    background-color: #000000; 
+    color: white; 
+    font-weight: bold; 
+    font-size: 14px; 
+    padding: 14px; 
+    border-radius: 6px; 
+    border: 1px solid #374151;
+} 
+QPushButton:hover { 
+    background-color: #1f2937; 
+}</string>
+          </property>
+          <property name="text">
+           <string>Ayuda: Manos</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="spacerIzquierdo">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QListWidget" name="listManoVisual">
+        <property name="styleSheet">
+         <string notr="true">background-color: #1f2937; border: 2px solid #4b5563; border-radius: 8px; font-size: 15px; color: #f3f4f6; padding: 8px;</string>
+        </property>
+        <property name="selectionMode">
+         <enum>QAbstractItemView::MultiSelection</enum>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="layoutBotones">
+      <property name="spacing">
+       <number>12</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="btnJugarMano">
+        <property name="cursor">
+         <cursorShape>ArrowCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton { background-color: #ef4444; color: white; font-weight: bold; font-size: 14px; padding: 14px; border-radius: 6px; } QPushButton:hover { background-color: #dc2626; }</string>
+        </property>
+        <property name="text">
+         <string>JUGAR MANO</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnDescartar">
+        <property name="cursor">
+         <cursorShape>ArrowCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton { background-color: #f59e0b; color: white; font-weight: bold; font-size: 14px; padding: 14px; border-radius: 6px; } QPushButton:hover { background-color: #d97706; }</string>
+        </property>
+        <property name="text">
+         <string>DESCARTAR SELECCIÓN</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnVerMazo">
+        <property name="cursor">
+         <cursorShape>ArrowCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton { background-color: #10b981; color: white; font-weight: bold; font-size: 14px; padding: 14px; border-radius: 6px; } QPushButton:hover { background-color: #059669; }</string>
+        </property>
+        <property name="text">
+         <string>VER MAZO</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
