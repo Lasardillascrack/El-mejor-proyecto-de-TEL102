@@ -1,0 +1,4 @@
+# Hashes of file build rules.
+4d7d43411151db25bfa235ec4f79fe0e CMakeFiles/presentacion_ardillatro_autogen
+4d7d43411151db25bfa235ec4f79fe0e CMakeFiles/presentacion_ardillatro_autogen_timestamp_deps
+3873be80079490c5b78a78a96f7689b2 presentacion_ardillatro_autogen/timestamp

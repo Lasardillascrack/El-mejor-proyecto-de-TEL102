@@ -1,0 +1,9 @@
+/home/ignacio/codigos/presentacion_ardillatro/presentacion_ardillatro/build/Desktop-Debug/CMakeFiles/presentacion_ardillatro.dir
+/home/ignacio/codigos/presentacion_ardillatro/presentacion_ardillatro/build/Desktop-Debug/CMakeFiles/edit_cache.dir
+/home/ignacio/codigos/presentacion_ardillatro/presentacion_ardillatro/build/Desktop-Debug/CMakeFiles/rebuild_cache.dir
+/home/ignacio/codigos/presentacion_ardillatro/presentacion_ardillatro/build/Desktop-Debug/CMakeFiles/list_install_components.dir
+/home/ignacio/codigos/presentacion_ardillatro/presentacion_ardillatro/build/Desktop-Debug/CMakeFiles/install.dir
+/home/ignacio/codigos/presentacion_ardillatro/presentacion_ardillatro/build/Desktop-Debug/CMakeFiles/install/local.dir
+/home/ignacio/codigos/presentacion_ardillatro/presentacion_ardillatro/build/Desktop-Debug/CMakeFiles/install/strip.dir
+/home/ignacio/codigos/presentacion_ardillatro/presentacion_ardillatro/build/Desktop-Debug/CMakeFiles/presentacion_ardillatro_autogen_timestamp_deps.dir
+/home/ignacio/codigos/presentacion_ardillatro/presentacion_ardillatro/build/Desktop-Debug/CMakeFiles/presentacion_ardillatro_autogen.dir
